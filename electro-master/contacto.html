@@ -96,8 +96,8 @@
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
 						<li><a href="index.html">Principal</a></li>
-						<li class="active"><a href="proyectos.html">Proyectos</a></li>
-						<li><a href="contacto.html">Contactenos</a></li>
+						<li><a href="proyectos.html">Proyectos</a></li>
+						<li class="active"><a href="contacto.html">Contactenos</a></li>
 						<li><a href="#">Referencias</a></li>
 					</ul>
 					<!-- /NAV -->
@@ -112,24 +112,28 @@
 		<div class="section">
 			<!-- container -->
 			<div class="container">
-				<div id="proyectTabs">
-					<ul>
-					  <li><a href="#red">Red BM</a></li>
-					  <li><a href="#reporte">Reportes</a></li>
-					  <li><a href="#truck">Truck</a></li>
-					  <li><a href="#casa">Truck</a></li>
-					  <li><a href="#carro">Truck</a></li>
-					</ul>
-					<div id="red">
-						<h2>Cableado de Red para academia BM</h2>
-						<a>En el año 2017 se realizo un cableado en BM computación <br></a>
-						<a>Consistio en el cableado ,instalación los puntos de red, conexión al switch y conexión a cada computadora.</a>
+				<h1>Contactenos</h1>
+				<a>Escribenos tus datos y la razon por la que deseas contactarnos</a>
+					<div id="error_message">
+					   
 					</div>
-					<div id="reporte"><img src="img/premio.jpg"/></div>
-					<div id="truck"><img src="img/universidad.jpg"/></div>
-					<div id="casa"><img src="img/universidad.jpg"/></div>
-					<div id="carro"><img src="img/universidad.jpg"/></div>
-				  </div>
+					<form action="" id="myform" onsubmit = "return validate();">
+					  <div class="input_field">
+						  <input type="text" placeholder="Name" id="name" size="50">
+					  </div>
+					  <div class="input_field">
+						  <input type="text" placeholder="Email" id="email" size="50">
+					  </div>
+					  <div class="input_field">
+						  <textarea placeholder="Razon de Contacto" id="razon"  rows="10" cols="52"></textarea>
+					  </div>
+					  <div class="btn">
+						  <input type="submit">
+					  </div>
+					</form>
+			
+				
+
 
 			</div>
 			<!-- /container -->
@@ -137,7 +141,7 @@
 		<!-- /SECTION -->
 
 	
-
+	</body>
 		
 		<!-- FOOTER -->
 		<footer id="footer">
@@ -188,10 +192,42 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/plugins.js"></script>
 		<script src="js/mijavascript.js"></script>
-		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/blitzer/jquery-ui.css"/>
-		<script src="http://code.jquery.com/jquery-2.1.3.js"></script>
-		<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+
+			//creo el plugin cuentaCaracteres
+			jQuery.fn.cuentaCaracteres = function() {
+				//para cada uno de los elementos del objeto jQuery
+				this.each(function(){
+					//creo una variable elem con el elemento actual, suponemos un textarea
+					elem = $(this);
+					//Creamos un div
+					var contador = $('<div>Total de Caracteres: ' + elem.val().length + '<div>');
+					//insertamos el div despues
+					elem.after(contador);
+					//guardar referencia al div en los datos del objeto jQuery
+					elem.data("campocontador", contador);
+					//crear listener del evento keyup
+					elem.keyup(function(){
+						var elem = $(this);
+						//recuperar el objeto del div
+						var campocontador = elem.data("campocontador");
+						//modificar el texto del contador
+						campocontador.text('Contador de Caracteres: ' + elem.val().length);
+					});
+				});
+			
+				//siempre tengo que devolver this
+				return this;
+			};
+			
+			$(document).ready(function(){
+				$("textarea").cuentaCaracteres();
+				
+			})
+			</script>
 
 	</body>
 </html>
