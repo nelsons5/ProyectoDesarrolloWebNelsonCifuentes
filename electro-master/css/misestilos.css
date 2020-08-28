@@ -27,6 +27,34 @@
     align-items: center; 
 }
 
+.estudios {
+  position: relative;
+  padding: 15px;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.estudios .cuadro{
+  font-family: inherit;
+  width: 330px;
+  height: 260px;
+  border: 0;
+  border-bottom: 5px solid gray;
+  border-right: 5px solid gray;
+  border-radius: 20px;
+  outline: 0;
+  opacity: 0.9;
+  font-size: 1.3rem;
+  color: white;
+  padding: 15px;
+  background-color:  #D10024;
+  transition: border-color 0.2s;
+  
+}
+
+
 /*CUADROS DE TEXTO */
 .input_field {
   position: relative;

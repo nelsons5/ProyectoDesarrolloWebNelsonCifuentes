@@ -15,6 +15,22 @@ function bigImg(x) {
     x.style.borderBottom = "5px outset black";
   }
 
+  function bigTarget(x) {
+    x.style.color = "pink";
+    x.style.height = "270px";
+    x.style.width = "340px";
+    x.style.border="dotted 5px white"
+  }
+  
+  function normalTarget(x) {
+    x.style.color = "white";
+    x.style.height = "260px";
+    x.style.width = "330px";
+    x.style.border=""
+    x.style.borderRight= "5px solid gray";
+    x.style.borderBottom = "5px solid gray";
+  }
+
 /*WIDGET TABS*/
   $(document).ready(function() {
     $("#proyectTabs").tabs();
