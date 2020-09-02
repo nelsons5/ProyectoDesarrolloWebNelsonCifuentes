@@ -49,7 +49,7 @@ function bigImg(x) {
     // creamos una variable llamada text en donde escribiremos el tipo de error
     var text;
     if(name.length < 5){
-      text = "Please Enter valid Name";
+      text = "Ingrese un nombre valido";
       error_message.innerHTML = text;
       return false;
     }
@@ -66,6 +66,12 @@ function bigImg(x) {
     alert("DATOS ALMACENADOS CORRECTAMENTE");
     return true;
   }
+    function closeContact(){
+      alert("Cancelado");
+      $("#name").val("");
+      $("#email").val("");
+      $("#razon").val("");
+    }
 
   function validarEmail(valor) {
     //Esta formula nos indicara si el email es correcto debe ser de esta forma: nombre usuario + @ + servidor + dominio
@@ -75,3 +81,33 @@ function bigImg(x) {
       else 
       return false;
     }
+
+    //SKILLS
+    var photos = new Array();
+    var wich = 0;
+
+    photos[0]="/electro-master/img/skills0.png"
+    photos[1]="/electro-master/img/skills1.png"
+    photos[2]="/electro-master/img/skills2.png"
+    photos[3]="/electro-master/img/skills3.png"
+
+    function forward(){
+        if( wich < photos.length-1 )
+            wich++;
+        else
+            wich=0;
+        //cambiar la imagen del elemento slider
+        imagen = document.getElementById("slider");
+        imagen.src = photos[wich];
+    }
+
+    function backward(){
+        if( wich> 0 )
+            wich--;
+        else
+            wich = photos.length-1;
+        //cambiar la imagen del elemento slider
+        imagen = document.getElementById("slider");
+        imagen.src = photos[wich];
+    }
+   
