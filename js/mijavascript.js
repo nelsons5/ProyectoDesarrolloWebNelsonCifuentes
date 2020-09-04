@@ -90,6 +90,8 @@ function bigImg(x) {
     photos[1]="./img/skills1.png"
     photos[2]="./img/skills2.png"
     photos[3]="./img/skills3.png"
+    photos[4]="./img/skills4.png"
+    photos[5]="./img/skills5.png"
 
     function forward(){
         if( wich < photos.length-1 )
