@@ -106,7 +106,7 @@
 			<main>
 				<div class="banner">
 					<input type="button" value="<<" onClick="backward()">
-					<img id="slider" src="/img/skills0.png" alt="">
+					<img id="slider" src="./img/skills0.png" alt="">
 					<input type="button" value=">>" onClick="forward()">
 				</div>
 			</main>
@@ -152,7 +152,7 @@
         var img=$(this).attr("src");
         var appear_image = "<div id='appear_image_div' onClick='closeImage()'></div>";
         appear_image = appear_image.concat("<img id='appear_image' src='"+ photos[wich]+ "'/>");
-        appear_image = appear_image.concat("<img id='close_image' onClick='closeImage()' src='/img/close.png' />");
+        appear_image = appear_image.concat("<img id='close_image' onClick='closeImage()' src='./img/close.png' />");
         $('body').append(appear_image);
       });
     });

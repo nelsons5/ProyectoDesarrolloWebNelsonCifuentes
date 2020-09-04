@@ -86,10 +86,10 @@ function bigImg(x) {
     var photos = new Array();
     var wich = 0;
 
-    photos[0]="/img/skills0.png"
-    photos[1]="/img/skills1.png"
-    photos[2]="/img/skills2.png"
-    photos[3]="/img/skills3.png"
+    photos[0]="./img/skills0.png"
+    photos[1]="./img/skills1.png"
+    photos[2]="./img/skills2.png"
+    photos[3]="./img/skills3.png"
 
     function forward(){
         if( wich < photos.length-1 )
