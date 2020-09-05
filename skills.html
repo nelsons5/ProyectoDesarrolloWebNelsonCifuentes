@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>Proyectos</title>
+		<title>Skills</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -147,15 +147,20 @@
 	
 		</script>
 		<script>
+			//VENTANA EMERGENTE AL SELECCIONAR UNA IMAGEN
 		jQuery(function($){
       $('#slider').click(function(){
-        var img=$(this).attr("src");
-        var appear_image = "<div id='appear_image_div' onClick='closeImage()'></div>";
-        appear_image = appear_image.concat("<img id='appear_image' src='"+ photos[wich]+ "'/>");
+		var img=$(this).attr("src");
+		//CREAMOS EL DIV QUE CONTENDRA LA VENTANA
+		var appear_image = "<div id='appear_image_div' onClick='closeImage()'></div>";
+		//LE CONCATENAMOS AL DIV LA IMAGEN QUE SE MOSTRARA
+		appear_image = appear_image.concat("<img id='appear_image' src='"+ photos[wich]+ "'/>");
+		//MUESTRA EL ICONO DE CERRAR Y LE PONEMOS LA FUNCION DE CERRAR IMAGEN
         appear_image = appear_image.concat("<img id='close_image' onClick='closeImage()' src='./img/close.png' />");
         $('body').append(appear_image);
       });
-    });
+	});
+	//FUNCION PARA CERRAR IMAGEN
     function closeImage(){
       $('#appear_image_div').remove();
       $('#appear_image').remove();
